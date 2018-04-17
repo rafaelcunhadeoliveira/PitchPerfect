@@ -34,7 +34,14 @@ class RecordViewController: UIViewController, AVAudioRecorderDelegate {
     override func viewWillAppear(_ animated: Bool) {
         recordLabel.text = "Ready to Record"
         recordTimer.invalidate()
+        navigationController?.isNavigationBarHidden = true
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
+    
     
     //MARK: - layout
     
